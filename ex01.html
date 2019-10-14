@@ -7,30 +7,30 @@
 <body>
 <p>Enter a Number: <input type="number" id="input"></p>
 <p>
-    <button type="button" onclick="show()">Show</button>
+    <button type="button" onclick="showResult()">Show</button>
 </p>
 <p id="output"></p>
 <script>
-    function show() {
+    function showResult() {
         let output = document.getElementById('output');
         let input = parseInt(document.getElementById('input').value);
-        let start = 1;
+        let startNumber = 1;
         let text = "";
-        while (start <= input) {
-            if (testPrime(start)) {
-                text += start + " ";
+        while (startNumber <= input) {
+            if (isPrime(startNumber)) {
+                text += startNumber + " ";
             }
-            start++;
+            startNumber++;
         }
         output.innerText = text;
     }
 
-    function testPrime(a) {
-        if (a < 2) {
+    function isPrime(number) {
+        if (number < 2) {
             return false;
         }
-        for (let i = 2; i <=Math.sqrt(a); i++) {
-            if (a % i == 0) {
+        for (let i = 2; i <=Math.sqrt(number); i++) {
+            if (number % i === 0) {
                 return false;
             }
         }

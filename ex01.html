@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Enter a Number: <input type="number" id="input"></p>
+<p>
+    <button type="button" onclick="show()">Show</button>
+</p>
+<p id="output"></p>
+<script>
+    function show() {
+        let output = document.getElementById('output');
+        let input = document.getElementById('input').value;
+        let start = 1;
+        let text = "";
+        while (start <= input) {
+            if (testPrime(start)) {
+                text += start + " ";
+            }
+            start++;
+        }
+        output.innerText = text;
+    }
+
+    function testPrime(a) {
+        if (a < 2) {
+            return false;
+        }
+        for (let i = 2; i < Math.sqrt(a); i++) {
+            if (a % i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>

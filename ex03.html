@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Enter Year Of Birth: <input type="number" id="input"></p>
+<p><button type="button" onclick="show()">Calculate Age</button></p>
+<p id="output"></p>
+<script>
+function calculateAge(year) {
+    let age;
+    let currentYear = new Date().getFullYear();
+    if(year > currentYear){
+        alert("Not Valid Year!");
+    }else{
+        age = currentYear- year;
+    }
+    return age;
+}
+
+function show() {
+    let year = document.getElementById('input').value;
+    let result  = calculateAge(year);
+   document.getElementById('output').innerText =" Age : "+calculateAge(year);
+}
+
+</script>
+</body>
+</html>
